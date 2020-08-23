@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="lib1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../synchronous_data/nlsync_data/sdbupsert/lib/log4j-1.2.16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../synchronous_data/nlsync_data/sdbupsert/lib/sequoiadb.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../synchronous_data/nlsync_data/sdbupsert/lib/univocity-parsers-2.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../synchronous_data/nlsync_data/sdbupsert/lib/chardet-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/function/function",
+    "pages/index/index",
+    "pages/logs/logs"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#0094ff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh":true
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "icons/me.png",
+      "selectedIconPath": "icons/meActive.png"
+    },{
+      "pagePath": "pages/function/function",
+      "text": "功能",
+      "iconPath": "icons/me.png",
+      "selectedIconPath": "icons/meActive.png"
+    },{
+      "pagePath": "pages/logs/logs",
+      "text": "日志",
+      "iconPath": "icons/me.png",
+      "selectedIconPath": "icons/meActive.png"
+    }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

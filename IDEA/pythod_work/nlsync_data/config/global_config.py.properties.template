@@ -1,0 +1,109 @@
+#!/usr/bin/python
+#coding=utf-8
+"""
+This script config is used to run by global config
+This config have next items:
+    1. SQL Command Line
+    2. Multiprocess Information
+    3. Sync Record Tables
+    4. SequoiaDB Connection
+"""
+
+"""
+Name: SQL Command Line
+Desc: sparksql_cmd: specify spark command line for running spark sql
+      postgresql_cmd: specify postgres command line for running postgres sql
+"""
+sparksql_cmd = '/data01/spark/bin/beeline -u jdbc:hive2://21.2.2.58:10000 -e "%s"'
+postgresql_cmd = '/opt/sequoiasql/bin/psql -h 21.2.2.61 -p 5454 -w  foo -c "%s"'
+
+
+"""
+Name: Multiprocess Information
+Desc: multi_spark: the host run spark process in multiprocess
+      multi_hosts: the host run import data process(normal process) in multiprocess
+      multi_thread_num: the thread number run import data process(normal process) in multiprocess
+"""
+sync_master = {'HostName': 'A-DSJ-HISDB04', 'RunShell': 'sh /home/sequoiadb/synchronous_data/nlsync_data/nlsync.sh'}
+sync_slaves = '[{"HostName": "A-DSJ-HISDB07", "RunShell": "sh /home/sequoiadb/synchronous_data/nlsync_data/nlsync.sh"}, {"HostName": "A-DSJ-HISDB10", "RunShell": "sh /home/sequoiadb/synchronous_data/nlsync_data/nlsync.sh"}, {"HostName": "A-DSJ-HISDB13", "RunShell": "sh /home/sequoiadb/synchronous_data/nlsync_data/nlsync.sh"}]'
+#multi_hosts = '[]'
+sync_thread_num = 10
+transcode_paths = ['/data01', '/data02', '/data03']
+sync_bakfail_file = '/data03/sync_back/backup.fail'
+
+
+
+"""
+Name: Sync Record Tables
+Desc: the tables record the result of the synchronous data
+      1. table <mdm.metatbl> record meta data infomation about source data structure in SDB
+      2. table <sync.config> record configure infomation when data synchronize to SDB
+      3. table <sync.local> record running infomation when data synchronize to SDB
+      4. table <sync.local> record running infomation when data synchronize to SDB
+      5. table <sync.local> record running infomation when data synchronize to SDB
+      6. table <sync.local> record running infomation when data synchronize to SDB
+      7. table <sync.log> record running infomation when data synchronize to SDB
+"""
+# mdm.metatbl
+mdm_metatbl_cs = 'mdm'
+mdm_metatbl_cl = 'metatbl'
+# sync.config
+sync_config_cs = 'nlsync'
+sync_config_cl = 'config'
+# sync.local
+sync_local_cs = 'nlsync'
+sync_local_cl = 'local'
+# sync.history
+sync_history_cs = 'nlsync'
+sync_history_cl = 'history'
+# sync.sparkloc
+sync_sparkloc_cs = 'nlsync'
+sync_sparkloc_cl = 'sparkloc'
+# sync.sparkhis
+sync_sparkhis_cs = 'nlsync'
+sync_sparkhis_cl = 'sparkhis'
+# sync.log
+sync_log_cs = 'nlsync'
+sync_log_cl = 'log'
+
+
+
+"""
+Name: SequoiaDB Connection
+Desc: host_name: the host name connect to SDB
+      server_port: the server port connect to SDB
+      user_name: the user name connect to SDB
+      password: the password connect to SDB
+"""
+host_name = 'localhost'
+server_port = 11810
+user_name = 'sdbapp'
+password = 'a2ZwdFNEQjIwMTY='
+sys_user = 'sdbadmin'
+sys_passwd = 'a2ZwdFNEQjIwMTYh'
+
+
+"""
+Name: SequoiaDB Import Upsert
+Desc: upsert_home: the sdbupsert tool's home direcotry
+      upsert_jar: the sdbupsert tool's name, default is 'sdbupsert.jar'
+	  upsert_property: the sdbupsert tool's table configure information
+	  upsert_logdir: the sdbupsert tool's log file directory
+"""
+upsert_home = '/home/sequoiadb/synchronous_data_new/nlsync_data/sdbupsert/'
+upsert_jar = 'sdbupsert.jar'
+upsert_property = 'sdb.properties'
+upsert_logdir = '/data03'
+
+"""
+Name: Clear File
+Desc:
+"""
+backup_dir = '/data01/odsdata'
+backup_num = '7'
+sync_data_dir = '/data03/odsdata'
+sync_data_num = '7'
+clear_files = ['/etldata/odsdata/%s/CBE/DDTCCY.dat',
+               '/etldata/odsdata/%s/SMC/CPHST_ALL.dat',
+               '/etldata/odsdata/%s/EBS/TRANSFLOW.dat']
+

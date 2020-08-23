@@ -1,0 +1,50 @@
+〇: 脚本功能说明:
+    通过把元数据表结构的EXCEL文件存放入SDB后, 格式化的生成Spark/Postgre的创建映射表语句和生成SDB导入工具sdbimprt的
+    命令行脚本;整个流程分三步: EXCEL文件导入->数据格式化->建表及导入脚本生成
+
+一: 文件目录说明:
+meta_data_manage
+   >autogen_cmd_line           //通过脚本生成SQL命令及SDB导入命令
+       >import_cmd_script.sql            //SDB导入工具sdbimprt的导入命令
+       >pg_create_table.sql              //PG创建表的命令
+       >spark_create_table.sql           //Spark创建表的命令
+   >source_excel
+       >[Template]Data_Structure.xlsx    //元数据表结构的EXCEL文件, 名字可更改
+   >MAIN_metadata_manage.py    //[主流程]从EXCEL导入->格式化->生成创建表和导入命令语句
+   >meta_cmd_sql.py            //生成创建表和导入命令语句脚本
+   >meta_data_format.py        //格式化脚本
+   >meta_excel_import.py       //元数据EXCEL导入脚本
+   >meta_sdb_op.py             //SDB操作数据库脚本
+
+二: 版本说明:
+    支持自动将EXCEL元数据结构入库并生成三个脚本;
+    缺陷: 暂时不支持自动创建Spark/Postgre与SDB的映射表
+
+三: 使用说明:
+    DEFAULT: pysequoiadb.tar.gz(SDB Python驱动包)
+    需要先安装库:
+    (xlrd, 包名: xlrd-1.0.0.tar.gz) -->
+    (依赖: setuptools, 包名: setuptools-29.0.1.tar.gz) -->
+    (依赖: zlib, 包名: zlib-1.2.8.tar.gz)
+
+[sdbadmin@CentOS65H1 meta_data_manage]$ python MAIN_metadata_manage.py --help
+Usage: MAIN_metadata_manage.py [options]
+
+Options:
+  -h, --help            show this help message and exit
+  --hostname=HOSTNAME   host name or IP address, default: localhost
+  --svcname=SVCNAME     service name, default: 11810
+  --user=USERNAME       user name of sdb, default: ""
+  --password=PASSWORD   password of sdb, default: ""
+  --filename=FILENAME   source data table structure in EXCEL, default:
+                        [Template]Data_Structure.xlsx
+  --meta_cs=META_CS     meta data struct cs name, default: mdm
+  --meta_cl=META_CL     meta data struct cl name, default: meta_cl
+  --spark_pkg=SPARK_PKG
+                        spark package for spark connector, default:
+                        com.sequoiadb.spark
+  --pg_srv=PG_SRV       PostgreSQL server for postgreSQL connector, default:
+                        sdb_server
+
+
+

@@ -1,0 +1,7 @@
+/* pages/function/function.wxss */
+.importBox{
+    background-color: rgb(21, 29, 26);
+    width: 100rpx;
+    height:100rpx;
+    border-left-width: 200rpx;
+}

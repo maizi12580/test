@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="sdbupsert1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../synchronous_data/sdb_tools/upsert_new/sdbupsert.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

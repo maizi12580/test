@@ -1,0 +1,2 @@
+2019-12-25 16:35:42,507 - ERROR - test.py[:23] - error message
+2019-12-25 16:35:42,507 - CRITICAL - test.py[:24] - critical message

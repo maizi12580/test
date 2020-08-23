@@ -1,0 +1,20 @@
+
+<view>
+  hello word || {{msg}}
+  <view>person:{{person.name}}{{person.age}}<view data-id="{{title}}">title</view> </view>
+  <view>
+    <checkbox checked="{{true}}"></checkbox>
+    <checkbox checked="{{isCheck}}"></checkbox>
+    <checkbox checked="{{isCheck?true:false}}"></checkbox>
+    <checkbox checked="{{num>1000}}" />
+  </view>
+  <view>{{num1+num2}}||{{string1+string2}}</view>
+  <view wx:for="{{array}}" wx:key="{{index}}">{{index}}{{item}}</view>
+  <block wx:for="{{person}}" wx:key="{{index}}">{{index}}:{{item}}</block>
+  
+  <view>
+    <view class="box"></view>
+    <view class="importBox"></view>
+  </view>
+  
+</view>

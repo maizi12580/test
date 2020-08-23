@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection shelf="New Arrivals">
+    <movie title="Enemy Behind">
+        <type>War, Thriller</type>
+        <year>2003</year>
+        <stars>10</stars>
+        <description>Talk about a US-Japan war</description>
+    </movie>
+    <movie title="Transformers">
+        <type>Anime, Science Fiction</type>
+        <year>1989</year>
+        <stars>8</stars>
+        <description>A schientific fiction</description>
+    </movie>
+    <movie title="Trigun">
+        <type>Anime, Action</type>
+        <year>1989</year>
+        <stars>10</stars>
+        <description>Vash the Stampede!</description>
+    </movie>
+    <movie title="Ishtar">
+        <type>Comedy</type>
+        <year>1989</year>
+        <stars>2</stars>
+        <description>Viewable boredom</description>
+    </movie>
+</collection>

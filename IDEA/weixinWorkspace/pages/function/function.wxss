@@ -1,0 +1,7 @@
+/* pages/function/function.wxss */
+@import "../../style/style.wxss";
+.box{
+    background-color: aquamarine;
+    width: 100rpx;
+    height:100rpx;
+}
